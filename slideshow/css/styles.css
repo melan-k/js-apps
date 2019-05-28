@@ -47,6 +47,25 @@ nav li:hover {
     width: 140px;
 }
 
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(5, 56px);
+    gap: 5px;
+}
+
+.thumbnails li {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.thumbnails li:hover {
+    opacity: 1.0;
+}
+
+.thumbnails li.current {
+  opacity: 1.0;
+}
+
 .thumbnails img {
     width: 56px;
     vertical-align: bottom;
