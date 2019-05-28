@@ -43,7 +43,7 @@ nav li:hover {
     background: #f8f8f8;
 }
 
-#play {
+#play, #pause {
     width: 140px;
 }
 
@@ -69,4 +69,8 @@ nav li:hover {
 .thumbnails img {
     width: 56px;
     vertical-align: bottom;
+}
+
+.hidden {
+  display: none;
 }
