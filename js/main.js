@@ -1,26 +1,40 @@
+function main() {
+	const userId = getUserId();
+	getUserInfo(userId)
+		.then((userInfo) => createView(userInfo))
+		.then((view) => displayView(view))
+		.catch((error) => {
+				console.error(`エラーが発生しました (${error})`);
+		});
+}
+
 function getUserInfo(userId) {
 	return new Promise((resolve, reject) => {
 		const request = new XMLHttpRequest();
 		request.open('GET', `https://api.github.com/users/${userId}`);
 		request.addEventListener("load", (event) => {
 			if (event.target.status != 200) {
-				console.error(`${event.target.status}: ${event.target.statusText}`);
-				return;
+				reject(new Error(`${event.target.status}: ${event.target.statusText}`));
 			}
 			// console.log(event.target.status);
 			// console.log(event.target.responseText);
 			const userInfo = JSON.parse(event.target.responseText);
+			console.log(userInfo.name);
 			const view = createView(userInfo);
 
 			displayView(view);
 			resolve(); // 完了
 		});
 		request.addEventListener("error", () => {
-			console.error("Network Error!");
-			reject();
+			reject(new Error("Network Error!"));
 		});
 		request.send();
 	});
+}
+
+function getUserId() {
+	const value = document.getElementById('userId').value;
+	return encodeURIComponent(value);
 }
 
 function createView(userInfo) {
