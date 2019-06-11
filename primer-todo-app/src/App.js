@@ -37,7 +37,7 @@ export class App {
     mount() {
         const formElement = document.querySelector("#js-form");
         const inputElement = document.querySelector("#js-form-input");
-        const containerElement = document.querySelector("#js-todo-list");
+        const todoListContainerElement = document.querySelector("#js-todo-list");
         const todoItemCountElement = document.querySelector("#js-todo-count");
 
         // 2. TodoListModelの状態が更新されたら表示を更新する
