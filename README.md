@@ -1,1 +1,2 @@
-This repository is collecting the projects of JavaScript practice apps.
+# js-apps
+repository for js practice applications
