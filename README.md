@@ -1,2 +1,2 @@
 # js-apps
-js practice application 
+repository for js practice applications
