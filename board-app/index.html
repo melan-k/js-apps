@@ -7,6 +7,17 @@
 </head>
 <body>
 	<div id="board">
+		<h2>掲示板</h2>
+		<ul class="lists" style="list-style-type: none">
+			<board-list v-for="list in lists"
+				v-bind:name="list.name"
+				v-bind:message="list.message"
+				v-bind:date="list.date">
+			</board-list>
+		</ul>
+		コメント: <textarea v-model="message"></textarea> </br>
+		<button @click="doAdd">投稿</button>
+		<board-form @input="doAdd"></board-form>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<script src="js/main.js"></script>
