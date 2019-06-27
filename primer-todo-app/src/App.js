@@ -62,6 +62,7 @@ export class App {
         });
 
         formElement.addEventListener("submit", (event) => {
+            // フォームの内容を指定するURLへ送信するデフォルト動作をキャンセル
             event.preventDefault();
             this.handleAdd(inputElement.value);
             // 入力欄を空文字にリセットする
