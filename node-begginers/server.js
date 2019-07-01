@@ -6,14 +6,9 @@ function start(route, handle) {
   function onRequest(request, response) {
     const pathname = url.parse(request.url).pathname;
     if (!pathname.match(/favicon.ico/)) {
-      console.log("Request for " + pathname + " received.");
-      route(handle, pathname);
-      console.log('');
+      console.log("\nRequest for " + pathname + " received.");
+      route(handle, pathname, response);
     }
-
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
-    response.end();
   }
   http.createServer(onRequest).listen(port);
   console.log('listening on port: ' + port);
