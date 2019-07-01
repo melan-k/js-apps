@@ -1,0 +1,25 @@
+body {
+  background: #FFC766;
+}
+
+#board {
+	width: 70%;
+	padding: 10px 0;
+	border: 1px solid #333;
+	border-radius: 0.75em / 0.75em;
+	margin: 0 auto;
+	background: #EFEFEF;
+}
+
+.border-list {
+	margin: 15px 0;
+}
+
+.border-list__upper {
+	font-weight: 600;
+}
+
+.form-area, .border-title {
+	width: 90%;
+	margin: 0 auto;
+}

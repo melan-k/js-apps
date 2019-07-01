@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Board app</title>
+	<link rel="stylesheet" href="css/styles.css">
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyA74zwMh5G85Rs_ERw2Sfj3j_ruRoP0Tl0",
+			authDomain: "board-app-6c771.firebaseapp.com",
+			databaseURL: "https://board-app-6c771.firebaseio.com",
+			projectId: "board-app-6c771",
+			storageBucket: "",
+			messagingSenderId: "1076824447391",
+			appId: "1:1076824447391:web:ccd202dbcece3b33"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
+
+</head>
+<body>
+	<div id="board">
+		<h2 class="board-title">掲示板</h2>
+		<ul class="lists" style="list-style-type: none">
+			<board-list v-for="(list, key) in lists"
+				:key="key"
+				:name="list.name"
+				:message="list.message"
+				:date="list.date">
+			</board-list>
+		</ul>
+		<board-form @input="doAdd"></board-form>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
